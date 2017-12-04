@@ -1,0 +1,24 @@
+<Window x:Class="DotnetConfigThing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Margin="0,5">
+                <Run Text="The hostname is" />
+                <Run x:Name="txtHostname" Text="(unknown)" />
+            </TextBlock>
+            <Button x:Name="btnConfigFuckery" Content="Mess with _app.config" Click="btnConfigFuckery_Click" />
+
+            <TextBlock x:Name="txtMessedWith"
+                       Margin="0,5"
+                       Visibility="Hidden"
+                       Text="Ok, it's messed with. Close this now and move it to the other machine."
+                       MaxWidth="150" TextWrapping="Wrap"
+                       />
+        </StackPanel>
+    </Grid>
+</Window>
